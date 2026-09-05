@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+<meta
+    name="viewport"
+    content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"
+>
+
 <title>KAEL ASSISTANT</title>
 
 <style>
+
+/* =====================================================
+RESET
+===================================================== */
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -13,7 +24,8 @@
     -webkit-tap-highlight-color:transparent;
 }
 
-html,body{
+html,
+body{
     width:100%;
     height:100%;
     overflow:hidden;
@@ -25,7 +37,10 @@ body{
     color:#111;
 }
 
-button,input,textarea,select{
+button,
+input,
+textarea,
+select{
     font-family:inherit;
 }
 
@@ -38,6 +53,7 @@ button{
     display:none!important;
 }
 
+
 /* =====================================================
 WELCOME
 ===================================================== */
@@ -46,11 +62,15 @@ WELCOME
     position:fixed;
     inset:0;
     z-index:999999;
-    background:rgba(0,0,0,.70);
+
     display:flex;
     align-items:center;
     justify-content:center;
+
+    background:rgba(0,0,0,.70);
+
     color:white;
+
     transition:.4s ease;
 }
 
@@ -69,23 +89,34 @@ WELCOME
 .welcomeAvatar{
     width:105px;
     height:105px;
+
     border-radius:50%;
+
     object-fit:cover;
+
     border:4px solid white;
+
     margin-bottom:18px;
-    box-shadow:0 15px 40px rgba(0,0,0,.5);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.5);
 }
 
 .welcomeTitle{
     font-size:38px;
     font-weight:900;
+
     color:#000;
+
     -webkit-text-stroke:2px white;
-    text-shadow:0 5px 15px rgba(0,0,0,.6);
+
+    text-shadow:
+        0 5px 15px rgba(0,0,0,.6);
 }
 
 .welcomeUsername{
     margin-top:9px;
+
     font-size:19px;
     font-weight:800;
 }
@@ -97,86 +128,170 @@ WELCOME
 
 #skipWelcome{
     position:absolute;
+
     right:20px;
     bottom:20px;
+
     padding:13px 24px;
+
     border-radius:13px;
-    background:#fff;
+
+    background:white;
     color:#111;
+
     font-weight:900;
-    box-shadow:0 8px 25px rgba(0,0,0,.35);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.35);
 }
 
-#skipWelcome:active{
-    transform:scale(.94);
-}
 
 /* =====================================================
-LOGIN
+AUTH SCREEN
 ===================================================== */
 
-#loginScreen{
+#authScreen{
     position:fixed;
     inset:0;
     z-index:99998;
-    background:#f5f5f7;
+
     display:none;
+
     align-items:center;
     justify-content:center;
+
     padding:20px;
+
+    background:#f5f5f7;
 }
 
-#loginScreen.show{
+#authScreen.show{
     display:flex;
 }
 
-.loginCard{
+.authCard{
     width:100%;
     max-width:430px;
-    padding:30px 23px;
-    border-radius:25px;
+
     background:white;
-    box-shadow:0 20px 70px rgba(0,0,0,.14);
+
+    border-radius:25px;
+
+    padding:28px 22px;
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.14);
+}
+
+.authLogo{
+    width:75px;
+    height:75px;
+
+    display:block;
+
+    margin:0 auto 14px;
+
+    border-radius:18px;
+}
+
+.authTitle{
     text-align:center;
-}
 
-.loginLogo{
-    width:80px;
-    height:80px;
-    border-radius:20px;
-    margin-bottom:15px;
-}
-
-.loginTitle{
     font-size:29px;
     font-weight:900;
 }
 
-.loginSub{
+.authSubtitle{
+    text-align:center;
+
     color:#777;
+
     margin-top:7px;
-    margin-bottom:25px;
+    margin-bottom:22px;
 }
 
-.loginButton{
-    width:100%;
-    height:52px;
-    border-radius:14px;
-    background:#111;
-    color:#fff;
-    font-weight:900;
-    font-size:15px;
+.authTabs{
+    display:flex;
+    gap:7px;
+
+    margin-bottom:18px;
 }
 
-.demoLogin{
-    width:100%;
-    height:45px;
-    margin-top:10px;
-    border-radius:13px;
+.authTab{
+    flex:1;
+
+    height:43px;
+
+    border-radius:11px;
+
     background:#eee;
-    color:#111;
-    font-weight:800;
+
+    color:#555;
+
+    font-weight:900;
 }
+
+.authTab.active{
+    background:#111;
+    color:white;
+}
+
+.authForm{
+    display:none;
+}
+
+.authForm.active{
+    display:block;
+}
+
+.authInput{
+    width:100%;
+    height:48px;
+
+    border:1px solid #d8d8d8;
+
+    border-radius:12px;
+
+    padding:0 13px;
+
+    outline:none;
+
+    margin-bottom:10px;
+
+    background:white;
+    color:#111;
+}
+
+.authInput:focus{
+    border-color:#111;
+}
+
+.authMainButton{
+    width:100%;
+    height:49px;
+
+    border-radius:12px;
+
+    background:#111;
+    color:white;
+
+    font-weight:900;
+
+    margin-top:4px;
+}
+
+.authInfo{
+    font-size:11px;
+
+    line-height:1.5;
+
+    color:#888;
+
+    margin-top:13px;
+
+    text-align:center;
+}
+
 
 /* =====================================================
 APP
@@ -184,8 +299,10 @@ APP
 
 #app{
     display:none;
+
     position:fixed;
     inset:0;
+
     overflow:hidden;
 }
 
@@ -200,18 +317,31 @@ APP
 
 #app.dark{
     background:#101114;
-    color:#fff;
+    color:white;
 }
 
 #app.purple{
-    background:linear-gradient(135deg,#f2e7ff,#fff);
+    background:
+        linear-gradient(
+            135deg,
+            #f0e4ff,
+            #ffffff
+        );
+
     color:#111;
 }
 
 #app.blue{
-    background:linear-gradient(135deg,#dceeff,#fff);
+    background:
+        linear-gradient(
+            135deg,
+            #dceeff,
+            #ffffff
+        );
+
     color:#111;
 }
+
 
 /* =====================================================
 SIDEBAR
@@ -219,33 +349,46 @@ SIDEBAR
 
 .sidebar{
     position:absolute;
+
     top:0;
     left:0;
     bottom:0;
+
     width:250px;
+
     padding:15px 12px;
-    background:rgba(255,255,255,.92);
+
+    background:
+        rgba(255,255,255,.94);
+
     backdrop-filter:blur(20px);
+
     border-right:1px solid #ddd;
+
     z-index:100;
 }
 
 .dark .sidebar{
-    background:rgba(20,21,25,.97);
+    background:#141519;
     border-color:#292a2f;
 }
 
 .logoArea{
     display:flex;
+
     align-items:center;
+
     gap:10px;
+
     padding:8px;
+
     margin-bottom:15px;
 }
 
 .logoArea img{
     width:42px;
     height:42px;
+
     border-radius:12px;
 }
 
@@ -257,24 +400,32 @@ SIDEBAR
 .sideBtn{
     width:100%;
     height:45px;
+
     margin-bottom:5px;
+
     border-radius:12px;
+
     padding:0 13px;
+
     background:transparent;
+
     color:inherit;
+
     text-align:left;
+
     font-weight:800;
 }
 
 .sideBtn.active{
     background:#111;
-    color:#fff;
+    color:white;
 }
 
 .dark .sideBtn.active{
-    background:#fff;
+    background:white;
     color:#111;
 }
+
 
 /* =====================================================
 MAIN
@@ -282,18 +433,23 @@ MAIN
 
 .main{
     position:absolute;
+
     top:0;
     right:0;
     bottom:0;
     left:250px;
+
     overflow:hidden;
 }
 
 .page{
     display:none;
-    height:100%;
+
     width:100%;
+    height:100%;
+
     overflow-y:auto;
+
     padding:30px;
     padding-bottom:100px;
 }
@@ -310,6 +466,7 @@ MAIN
 .pageDesc{
     margin-top:6px;
     margin-bottom:24px;
+
     color:#777;
 }
 
@@ -317,20 +474,28 @@ MAIN
     color:#aaa;
 }
 
+
 /* =====================================================
 HOME
 ===================================================== */
 
 .hero{
-    border-radius:25px;
-    padding:30px;
     min-height:240px;
+
+    padding:30px;
+
+    border-radius:25px;
+
     background:#111;
-    color:#fff;
+
+    color:white;
+
     display:flex;
     flex-direction:column;
     justify-content:center;
-    box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.12);
 }
 
 .hero h1{
@@ -345,25 +510,35 @@ HOME
 
 .homeGrid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+        repeat(2,1fr);
+
     gap:15px;
+
     margin-top:18px;
 }
 
 .homeCard{
     min-height:125px;
+
     padding:20px;
+
     text-align:left;
+
     border-radius:20px;
-    background:#fff;
+
+    background:white;
+
     border:1px solid #ddd;
+
     color:#111;
 }
 
 .dark .homeCard{
     background:#1a1b20;
     border-color:#2b2c31;
-    color:#fff;
+    color:white;
 }
 
 .homeCard:active{
@@ -376,33 +551,42 @@ HOME
 
 .homeCard p{
     color:#777;
+
     margin-top:7px;
+
     line-height:1.4;
 }
 
+
 /* =====================================================
-AI LAYOUT
+AI
 ===================================================== */
 
 .aiLayout{
     height:calc(100vh - 60px);
+
     display:grid;
+
     grid-template-columns:245px 1fr;
+
     gap:15px;
 }
 
-/* =====================================================
-CONVERSATION SIDEBAR
-===================================================== */
-
 .conversationPanel{
     height:100%;
-    background:#fff;
+
+    background:white;
+
     border:1px solid #ddd;
+
     border-radius:20px;
+
     padding:12px;
+
     display:flex;
+
     flex-direction:column;
+
     overflow:hidden;
 }
 
@@ -414,70 +598,96 @@ CONVERSATION SIDEBAR
 .newConversation{
     width:100%;
     height:46px;
+
     border-radius:12px;
+
     background:#111;
-    color:#fff;
+    color:white;
+
     font-weight:900;
+
     margin-bottom:10px;
 }
 
 .dark .newConversation{
-    background:#fff;
+    background:white;
     color:#111;
 }
 
 .conversationTitle{
     padding:7px 5px 9px;
+
     color:#777;
+
     font-size:12px;
+
     font-weight:900;
+
     text-transform:uppercase;
 }
 
 .conversationList{
     flex:1;
+
     overflow-y:auto;
 }
 
 .conversationItem{
     position:relative;
+
     width:100%;
+
     min-height:50px;
+
     padding:9px 35px 9px 10px;
+
     margin-bottom:5px;
+
     border-radius:11px;
+
     background:transparent;
+
     color:inherit;
+
     text-align:left;
 }
 
-.conversationItem:hover,
-.conversationItem.active{
+.conversationItem.active,
+.conversationItem:hover{
     background:#eee;
 }
 
-.dark .conversationItem:hover,
-.dark .conversationItem.active{
+.dark .conversationItem.active,
+.dark .conversationItem:hover{
     background:#292a30;
 }
 
 .conversationName{
     font-size:13px;
     font-weight:800;
+
     overflow:hidden;
+
     white-space:nowrap;
+
     text-overflow:ellipsis;
 }
 
 .deleteConversation{
     position:absolute;
+
     right:7px;
     top:50%;
+
     transform:translateY(-50%);
+
     width:25px;
     height:25px;
+
     border-radius:7px;
+
     background:transparent;
+
     color:#999;
 }
 
@@ -486,39 +696,47 @@ CONVERSATION SIDEBAR
     color:#111;
 }
 
-/* =====================================================
-CHAT
-===================================================== */
-
 .chatPanel{
     min-width:0;
+
     height:100%;
+
     display:flex;
+
     flex-direction:column;
 }
 
 .chatHeader{
     min-height:50px;
+
     display:flex;
+
     align-items:center;
+
     gap:10px;
+
     font-weight:900;
 }
 
 #currentConversationTitle{
     overflow:hidden;
-    text-overflow:ellipsis;
+
     white-space:nowrap;
+
+    text-overflow:ellipsis;
 }
 
 .aiMessages{
     flex:1;
+
     overflow-y:auto;
+
     padding:10px 5px 20px;
 }
 
 .messageRow{
     display:flex;
+
     margin-bottom:17px;
 }
 
@@ -528,27 +746,38 @@ CHAT
 
 .messageBubble{
     max-width:82%;
+
     padding:14px 16px;
+
     border-radius:18px;
+
     line-height:1.55;
+
     white-space:pre-wrap;
+
     background:#e9e9eb;
+
     color:#111;
 }
 
 .dark .messageBubble{
     background:#202126;
-    color:#fff;
+    color:white;
 }
 
 .messageRow.user .messageBubble{
     background:#111;
-    color:#fff;
+    color:white;
 }
 
 .dark .messageRow.user .messageBubble{
-    background:#fff;
+    background:white;
     color:#111;
+}
+
+.processing{
+    color:#777;
+    font-style:italic;
 }
 
 .codeContainer{
@@ -557,66 +786,90 @@ CHAT
 
 .codeTitle{
     margin-bottom:7px;
+
     font-weight:900;
 }
 
 .codeBlock{
     background:#090909;
-    color:#fff;
+
+    color:white;
+
     border-radius:12px;
+
     padding:14px;
+
     overflow-x:auto;
+
     white-space:pre;
+
     font-family:monospace;
+
     font-size:12px;
 }
 
 .copyButton{
     margin-top:8px;
-    padding:8px 12px;
-    border-radius:8px;
-    background:#fff;
-    color:#111;
-    font-weight:800;
-    font-size:12px;
-}
 
-.processing{
-    color:#777;
-    font-style:italic;
+    padding:8px 12px;
+
+    border-radius:8px;
+
+    background:white;
+
+    color:#111;
+
+    font-weight:800;
+
+    font-size:12px;
 }
 
 .chatComposer{
     display:flex;
+
     gap:8px;
+
     padding:10px 0;
 }
 
 #aiInput{
     flex:1;
+
     min-height:52px;
     max-height:140px;
+
     resize:none;
+
     border:1px solid #d5d5d5;
+
     border-radius:15px;
+
     padding:14px;
+
     outline:none;
-    background:#fff;
+
+    background:white;
+
     color:#111;
 }
 
 #sendAI{
     width:54px;
+
     border-radius:15px;
+
     background:#111;
-    color:#fff;
+
+    color:white;
+
     font-size:19px;
 }
 
 .dark #sendAI{
-    background:#fff;
+    background:white;
     color:#111;
 }
+
 
 /* =====================================================
 KITS
@@ -624,14 +877,20 @@ KITS
 
 .kitGrid{
     display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+
+    grid-template-columns:
+        repeat(auto-fill,minmax(240px,1fr));
+
     gap:15px;
 }
 
 .kitCard{
-    background:#fff;
+    background:white;
+
     border:1px solid #ddd;
+
     border-radius:20px;
+
     padding:20px;
 }
 
@@ -646,15 +905,21 @@ KITS
 
 .kitCard p{
     color:#777;
+
     margin-top:7px;
 }
 
 .kitId{
     margin-top:15px;
+
     padding:11px;
+
     background:#eee;
+
     border-radius:10px;
+
     font-family:monospace;
+
     font-size:12px;
 }
 
@@ -664,13 +929,20 @@ KITS
 
 .smallBtn{
     margin-top:10px;
+
     height:40px;
+
     padding:0 15px;
+
     border-radius:10px;
+
     background:#111;
-    color:#fff;
+
+    color:white;
+
     font-weight:800;
 }
+
 
 /* =====================================================
 USERS
@@ -678,17 +950,26 @@ USERS
 
 .userGrid{
     display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+
+    grid-template-columns:
+        repeat(auto-fill,minmax(230px,1fr));
+
     gap:12px;
 }
 
 .userCard{
     display:flex;
+
     align-items:center;
+
     gap:12px;
+
     padding:15px;
+
     border-radius:18px;
-    background:#fff;
+
+    background:white;
+
     border:1px solid #ddd;
 }
 
@@ -700,14 +981,18 @@ USERS
 .userAvatar{
     width:48px;
     height:48px;
+
     border-radius:50%;
 }
 
 .userStatus{
     color:#777;
+
     font-size:12px;
+
     margin-top:3px;
 }
+
 
 /* =====================================================
 DEVELOPMENT
@@ -715,14 +1000,19 @@ DEVELOPMENT
 
 .devGrid{
     display:grid;
+
     grid-template-columns:230px 1fr;
+
     gap:15px;
 }
 
 .devBox{
-    background:#fff;
+    background:white;
+
     border:1px solid #ddd;
+
     border-radius:20px;
+
     padding:20px;
 }
 
@@ -733,19 +1023,25 @@ DEVELOPMENT
 
 .countrySelect{
     width:100%;
+
     height:45px;
+
     border-radius:10px;
+
     border:1px solid #ddd;
+
     padding:0 10px;
 }
 
 .globalChat{
     height:400px;
+
     overflow-y:auto;
 }
 
 .chatLine{
     padding:10px 0;
+
     border-bottom:1px solid #eee;
 }
 
@@ -769,25 +1065,36 @@ DEVELOPMENT
 
 .chatSend{
     display:flex;
+
     gap:7px;
+
     margin-top:10px;
 }
 
 #globalChatInput{
     flex:1;
+
     height:45px;
+
     border:1px solid #ddd;
+
     border-radius:11px;
+
     padding:0 12px;
 }
 
 #sendGlobalChat{
     width:75px;
+
     border-radius:11px;
+
     background:#111;
-    color:#fff;
+
+    color:white;
+
     font-weight:800;
 }
+
 
 /* =====================================================
 PROFILE
@@ -795,9 +1102,13 @@ PROFILE
 
 .profileBox{
     max-width:560px;
-    background:#fff;
+
+    background:white;
+
     border:1px solid #ddd;
+
     border-radius:23px;
+
     padding:25px;
 }
 
@@ -809,38 +1120,54 @@ PROFILE
 .profileAvatar{
     width:90px;
     height:90px;
+
     border-radius:50%;
 }
 
 .profileDisplay{
     font-size:25px;
+
     font-weight:900;
+
     margin-top:12px;
 }
 
 .profileInfo{
     color:#777;
+
     margin-top:4px;
 }
 
 .profileInput{
     width:100%;
+
     height:46px;
+
     margin-top:20px;
+
     border:1px solid #ddd;
+
     border-radius:11px;
+
     padding:0 12px;
 }
 
 .profileAction{
     margin-top:10px;
+
     height:45px;
+
     padding:0 17px;
+
     border-radius:11px;
+
     background:#111;
-    color:#fff;
+
+    color:white;
+
     font-weight:900;
 }
+
 
 /* =====================================================
 SETTINGS
@@ -848,9 +1175,13 @@ SETTINGS
 
 .settingsBox{
     max-width:600px;
-    background:#fff;
+
+    background:white;
+
     border:1px solid #ddd;
+
     border-radius:23px;
+
     padding:20px;
 }
 
@@ -861,6 +1192,7 @@ SETTINGS
 
 .settingRow{
     padding:15px 0;
+
     border-bottom:1px solid #eee;
 }
 
@@ -870,32 +1202,46 @@ SETTINGS
 
 .settingLabel{
     font-weight:900;
+
     margin-bottom:10px;
 }
 
 .bgButtons{
     display:flex;
+
     flex-wrap:wrap;
+
     gap:8px;
 }
 
 .bgBtn{
     padding:10px 14px;
+
     border-radius:10px;
+
     background:#eee;
+
     color:#111;
+
     font-weight:800;
 }
 
 .logoutBtn{
     width:100%;
+
     height:48px;
+
     margin-top:20px;
+
     border-radius:12px;
+
     background:#111;
-    color:#fff;
+
+    color:white;
+
     font-weight:900;
 }
+
 
 /* =====================================================
 MOBILE NAV
@@ -903,43 +1249,63 @@ MOBILE NAV
 
 .mobileNav{
     display:none;
+
     position:fixed;
+
     z-index:999;
+
     left:9px;
     right:9px;
     bottom:9px;
+
     height:65px;
+
     border-radius:20px;
-    background:rgba(255,255,255,.95);
+
+    background:
+        rgba(255,255,255,.95);
+
     backdrop-filter:blur(20px);
-    box-shadow:0 10px 35px rgba(0,0,0,.2);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.2);
+
     justify-content:space-around;
+
     align-items:center;
 }
 
 .dark .mobileNav{
-    background:rgba(25,26,31,.96);
+    background:
+        rgba(25,26,31,.96);
 }
 
 .mobileNav button{
     width:18%;
+
     height:53px;
+
     border-radius:13px;
+
     background:transparent;
+
     color:#777;
+
     font-size:10px;
+
     font-weight:900;
 }
 
 .mobileNav button.active{
     background:#111;
-    color:#fff;
+    color:white;
 }
 
 .dark .mobileNav button.active{
-    background:#fff;
+    background:white;
     color:#111;
 }
+
 
 /* =====================================================
 TOAST
@@ -947,26 +1313,45 @@ TOAST
 
 #toast{
     position:fixed;
+
     left:50%;
     bottom:85px;
+
     z-index:9999999;
-    transform:translateX(-50%) translateY(20px);
+
+    transform:
+        translateX(-50%)
+        translateY(20px);
+
     opacity:0;
+
     pointer-events:none;
+
     max-width:90%;
+
     padding:12px 18px;
+
     border-radius:12px;
+
     background:#111;
-    color:#fff;
+
+    color:white;
+
     text-align:center;
+
     font-size:13px;
+
     transition:.25s;
 }
 
 #toast.show{
     opacity:1;
-    transform:translateX(-50%) translateY(0);
+
+    transform:
+        translateX(-50%)
+        translateY(0);
 }
+
 
 /* =====================================================
 MOBILE
@@ -984,6 +1369,7 @@ MOBILE
 
     .page{
         padding:18px;
+
         padding-bottom:95px;
     }
 
@@ -1001,13 +1387,17 @@ MOBILE
 
     .aiLayout{
         height:calc(100vh - 110px);
+
         display:flex;
+
         flex-direction:column;
     }
 
     .conversationPanel{
         height:auto;
+
         max-height:150px;
+
         min-height:0;
     }
 
@@ -1017,6 +1407,7 @@ MOBILE
 
     .chatPanel{
         min-height:0;
+
         flex:1;
     }
 
@@ -1038,10 +1429,13 @@ MOBILE
     }
 
 }
+
 </style>
+
 </head>
 
 <body>
+
 
 <!-- =====================================================
 WELCOME
@@ -1053,16 +1447,19 @@ WELCOME
 
         <img
             class="welcomeAvatar"
+            id="welcomeAvatar"
             src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-Png/150/150/AvatarHeadshot/Webp/noFilter"
-            onerror="this.src='https://www.roblox.com/headshot-thumbnail/image?userId=1&width=150&height=150&format=png'"
         >
 
         <div class="welcomeTitle">
             Selamat Datang
         </div>
 
-        <div class="welcomeUsername">
-            cntl78
+        <div
+            class="welcomeUsername"
+            id="welcomeUsername"
+        >
+            KAEL ASSISTANT
         </div>
 
         <div class="welcomeSub">
@@ -1079,137 +1476,90 @@ WELCOME
 
 
 <!-- =====================================================
-LOGIN
+AUTH
 ===================================================== -->
 
-<div id="loginScreen">
+<div id="authScreen">
 
-    <div class="loginCard">
+    <div class="authCard">
 
         <img
-            class="loginLogo"
+            class="authLogo"
             src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-Png/150/150/AvatarHeadshot/Webp/noFilter"
         >
 
-        <div class="loginTitle">
+        <div class="authTitle">
             KAEL ASSISTANT
         </div>
 
-        <div class="loginSub">
-            Masuk ke KAEL ASSISTANT
+        <div class="authSubtitle">
+            Login menggunakan akun KAEL ASSISTANT
         </div>
 
-        <button
-            id="googleLogin"
-            class="loginButton"
+
+        <div class="authTabs">
+
+            <button
+                class="authTab active"
+                id="loginTab"
+            >
+                Login
+            </button>
+
+            <button
+                class="authTab"
+                id="registerTab"
+            >
+                Sign Up
+            </button>
+
+        </div>
+
+
+        <!-- LOGIN -->
+
+        <div
+            id="loginForm"
+            class="authForm active"
         >
-            🔵 Continue with Google
-        </button>
 
-        <button
-            id="demoLogin"
-            class="demoLogin"
-        >
-            Masuk sebagai cntl78
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-APP
-===================================================== -->
-
-<div id="app" class="white">
-
-    <!-- SIDEBAR -->
-
-    <aside class="sidebar">
-
-        <div class="logoArea">
-
-            <img
-                src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-Png/150/150/AvatarHeadshot/Webp/noFilter"
+            <input
+                id="loginUsername"
+                class="authInput"
+                placeholder="Username Roblox"
+                autocomplete="username"
             >
 
-            <span>
-                KAEL ASSISTANT
-            </span>
+            <input
+                id="loginPassword"
+                class="authInput"
+                type="password"
+                placeholder="Password KAEL ASSISTANT"
+                autocomplete="current-password"
+            >
+
+            <button
+                id="loginButton"
+                class="authMainButton"
+            >
+                Login
+            </button>
 
         </div>
 
-        <button class="sideBtn active" data-page="home">
-            🏠 Home
-        </button>
 
-        <button class="sideBtn" data-page="ai">
-            🤖 Roblox AI
-        </button>
+        <!-- REGISTER -->
 
-        <button class="sideBtn" data-page="kits">
-            🧰 Kits
-        </button>
-
-        <button class="sideBtn" data-page="users">
-            🌎 Pengguna
-        </button>
-
-        <button class="sideBtn" data-page="development">
-            💬 Development
-        </button>
-
-        <button class="sideBtn" data-page="profile">
-            👤 Profile
-        </button>
-
-        <button class="sideBtn" data-page="settings">
-            ⚙️ Settings
-        </button>
-
-    </aside>
-
-
-    <main class="main">
-
-        <!-- =================================================
-        HOME
-        ================================================= -->
-
-        <section
-            id="page-home"
-            class="page active"
+        <div
+            id="registerForm"
+            class="authForm"
         >
 
-            <div class="hero">
+            <input
+                id="registerUsername"
+                class="authInput"
+                placeholder="Username Roblox"
+                autocomplete="username"
+            >
 
-                <h1>
-                    Selamat Datang 👋
-                </h1>
-
-                <p id="homeText">
-                    Selamat datang di KAEL ASSISTANT.
-                </p>
-
-            </div>
-
-            <div class="homeGrid">
-
-                <button
-                    class="homeCard"
-                    data-page="ai"
-                >
-
-                    <h3>
-                        🤖 Roblox AI
-                    </h3>
-
-                    <p>
-                        Tanya tentang Roblox,
-                        Lua dan pembuatan game.
-                    </p>
-
-                </button>
-
-       
+      
